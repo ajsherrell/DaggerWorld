@@ -28,10 +28,18 @@ import javax.inject.Inject
 
 class RegistrationActivity : AppCompatActivity() {
 
+    //@Inject annotated fields will be provided by Dagger:
     @Inject
     lateinit var registrationViewModel: RegistrationViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        //grabs instance of the application graph
+        //and populates @Inject fields with objects from the graph.
+        // gets rid of the "has not been initialized" error!!! --has to be called be super.onCreate
+        //to avoid issues with fragment restoration.
+        (application as MyApplication).appComponent.inject(this)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration)
 

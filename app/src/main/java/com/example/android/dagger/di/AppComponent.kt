@@ -9,7 +9,7 @@ import javax.inject.Singleton
 
 //definition of a Dagger component that adds info from the StorageModule to the graph.
 @Singleton
-@Component(modules = [StorageModule::class])
+@Component(modules = [StorageModule::class, AppSubcomponents::class])
 interface AppComponent {
 
     //factory to create instances of the AppComponent

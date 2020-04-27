@@ -5,6 +5,7 @@ import com.example.android.dagger.settings.SettingsActivity
 import dagger.Subcomponent
 
 // Definition of a Dagger subcomponent
+@LoggedUserScope
 @Subcomponent
 interface UserComponent {
 

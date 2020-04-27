@@ -28,6 +28,10 @@ open class MyApplication : Application() {
     val appComponent: AppComponent by lazy {
         //creates an instance of AppComponent using its Factory constructor
         //we will pass the applicationContext that will be used as Context in the graph.
-        DaggerAppComponent.factory().create(applicationContext)
+        initializeComponent()
+    }
+
+    open fun initializeComponent(): AppComponent {
+        return DaggerAppComponent.factory().create(applicationContext)
     }
 }

@@ -58,6 +58,7 @@ dependencies {
     testImplementation 'android.arch.core:core-testing:1.1.1'
 
     def androidx_test_version = "1.2.0"
+    kaptAndroidTest "com.google.dagger:dagger-compiler:$dagger_version"
     androidTestImplementation "androidx.test:runner:$androidx_test_version"
     androidTestImplementation "androidx.test:core-ktx:$androidx_test_version"
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
